@@ -8,22 +8,23 @@ public class Stack<Trem> {
     private List<Trem> vetor;
     private int topo;
 
-    public Stack (){
+    public Stack() {
         this.vetor = new ArrayList<Trem>();
         this.topo = 0;
     }
 
     public void empilhar(Trem x) {
-        this.vetor.add(x);
-        this.topo++;
+        this.vetor.add(x); 
+        this.topo++; 
     }
 
     public Trem desempilhar() throws Exception {
-        if(this.estaVazia()) {
-            return null;
+        if (this.estaVazia()) {
+            throw new Exception("A pilha está vazia, não é possível desempilhar.");
         }
 
-        return this.vetor.get(this.topo);
+        this.topo--;  
+        return this.vetor.get(this.topo);  
     }
 
     public boolean estaVazia() {
@@ -34,4 +35,5 @@ public class Stack<Trem> {
         return this.vetor.size();
     }
 }
+
 
